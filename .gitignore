@@ -1,2 +1,4 @@
 .talismanrc
 .DS_Store
+venv/
+.talismanrc
