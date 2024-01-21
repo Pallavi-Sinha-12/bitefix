@@ -63,7 +63,7 @@ Let's say you have a function that is supposed to return longest length of subse
 
 from bitefix import resolve_error_with_openai
 
-@resolve_error_with_openai(openai_api_key="YOUR_OPENAI_KEY")
+@resolve_with_openai(openai_api_key="YOUR_OPENAI_KEY")
 def length_of_lis(nums):
     if not nums:
         return 0
@@ -116,7 +116,7 @@ from langchain_community import Ollama
 
 llm = Ollama("openhermes")
 
-@resolve_error(llm)
+@resolve(llm)
 def length_of_lis(nums):
     if not nums:
         return 0
