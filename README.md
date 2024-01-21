@@ -53,15 +53,15 @@ Happy Coding! 🚀
 
 ## Examples 💻
 
-Let's take a look at some examples to understand how BiteFix works. Bitefix offers two decorators: `@resolve_error` and `@resolve_error_with_openai`.
+Let's take a look at some examples to understand how BiteFix works. Bitefix offers two decorators: `@resolve` and `@resolve_with_openai`.
 
 ### Example 1 : Using Open AI Models
 
-Let's say you have a function that is supposed to return longest length of subsequence in a given list. We can use `@resolve_error_with_openai` decorator with our function to help us resolve the error if the function fails while execution.
+Let's say you have a function that is supposed to return longest length of subsequence in a given list. We can use `@resolve_with_openai` decorator with our function to help us resolve the error if the function fails while execution.
 
 ```python
 
-from bitefix import resolve_error_with_openai
+from bitefix import resolve_with_openai
 
 @resolve_with_openai(openai_api_key="YOUR_OPENAI_KEY")
 def length_of_lis(nums):
@@ -97,7 +97,7 @@ We can see how this decorator provided us step by step debugging of the function
 
 ### Example 2 : Using Open Source Models
 
-If we want to use some other Large Language Model instead of OpenAI, we can use `@resolve_error` decorator with our function to help us resolve the error if the function fails while execution. This helps us to use any custom trained model as well for error resolution.
+If we want to use some other Large Language Model instead of OpenAI, we can use `@resolve` decorator with our function to help us resolve the error if the function fails while execution. This helps us to use any custom trained model as well for error resolution.
 
 For this example, let's use Openhermes model from Ollama. You can download Ollama from [here](https://ollama.ai/). Ollama allows you to run open-source large language models, such as Openhermes, Llama 2, locally. 
 
@@ -107,11 +107,11 @@ After downloading Ollama, install it. Then run the following command to pull the
 ollama pull openhermes
 ```
 
-Now, we can use the model with the decorator `@resolve_error` as follows.
+Now, we can use the model with the decorator `@resolve` as follows.
 
 ```python
 
-from bitefix import resolve_error
+from bitefix import resolve
 from langchain_community import Ollama
 
 llm = Ollama("openhermes")
