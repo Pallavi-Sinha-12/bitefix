@@ -4,7 +4,10 @@ from typing import Any, Callable
 from langchain_openai import ChatOpenAI
 from bitefix.BiteFixAIRunner import BiteFixAIRunner
 
-def resolve_with_openai(openai_api_key: str, model_name: str = "gpt-4", temperature: float = 0.7) -> Callable:
+
+def resolve_with_openai(
+    openai_api_key: str, model_name: str = "gpt-4", temperature: float = 0.7
+) -> Callable:
     """
     Bite Fix AI Decorator that resolves errors in a function using OpenAI model.
 
@@ -16,8 +19,8 @@ def resolve_with_openai(openai_api_key: str, model_name: str = "gpt-4", temperat
     Returns:
         function: Decorator function that resolves errors using Bite Fix AI.
     """
+
     def resolve_with_openai_decorator(func) -> Callable:
-        
         def function_causing_error(*args, **kwargs) -> Any:
             """
             Function that executes the decorated function and handles errors.
@@ -36,25 +39,21 @@ def resolve_with_openai(openai_api_key: str, model_name: str = "gpt-4", temperat
             except Exception as e:
                 print("Error occurred while executing the function. - ", e)
                 code = inspect.getsource(func)
-                
+
                 os.environ["OPENAI_API_KEY"] = openai_api_key
-                llm = ChatOpenAI(temperature=temperature, model_name = model_name)
+                llm = ChatOpenAI(temperature=temperature, model_name=model_name)
 
                 print("Starting Bite Fix AI ...")
 
                 biteFixAIRunner = BiteFixAIRunner(
-                    function_code=code,
-                    arguments=args,
-                    error_message=e,
-                    llm=llm
+                    function_code=code, arguments=args, error_message=e, llm=llm
                 )
                 result = biteFixAIRunner.run()
-                
+
                 print("*****************************")
                 print("Bite Fix AI completed. Here is the result - ", result)
                 print("You can try the suggested fix now. Happy coding!")
-            
-        
+
         return function_causing_error
 
     return resolve_with_openai_decorator
@@ -70,8 +69,8 @@ def resolve(llm: object) -> Callable:
     Returns:
         function: Decorator function that resolves errors using the provided language model.
     """
+
     def resolve_decorator(func) -> Callable:
-        
         def function_causing_error(*args, **kwargs) -> Any:
             """
             Function that executes the decorated function and handles errors.
@@ -96,18 +95,14 @@ def resolve(llm: object) -> Callable:
                 print("Starting Bite Fix AI ...")
 
                 biteFixAIRunner = BiteFixAIRunner(
-                    function_code=code,
-                    arguments=args,
-                    error_message=e,
-                    llm=llm
+                    function_code=code, arguments=args, error_message=e, llm=llm
                 )
                 result = biteFixAIRunner.run()
-                
+
                 print("*****************************")
                 print("Bite Fix AI completed. Here is the result - ", result)
                 print("You can try the suggested fix now. Happy coding!")
-            
-        
+
         return function_causing_error
 
     return resolve_decorator

@@ -19,26 +19,30 @@ class BiteFixAIRunner:
         run: Initializes the Bite Fix AI Agents and Tasks involved in the error fixing process and passes them to the Bite Fix AI Crew to kickoff.
     """
 
-    def __init__(self, function_code : str, arguments : Tuple[Any, ...], error_message : str, llm : object):
-
+    def __init__(
+        self,
+        function_code: str,
+        arguments: Tuple[Any, ...],
+        error_message: str,
+        llm: object,
+    ):
         self.function_code = function_code
         self.arguments = arguments
         self.error_message = error_message
         self.llm = llm
 
     def run(self) -> str:
-
         biteFixAIAgents = BiteFixAIAgents(
             function_code=self.function_code,
             arguments=self.arguments,
             error_message=self.error_message,
-            llm=self.llm
+            llm=self.llm,
         )
 
         biteFixAITasks = BiteFixAITasks(
             function_code=self.function_code,
             arguments=self.arguments,
-            error_message=self.error_message
+            error_message=self.error_message,
         )
 
         diagnosisAgent = biteFixAIAgents.DiagnosisAgent()
@@ -48,22 +52,26 @@ class BiteFixAIRunner:
 
         diagnosisTask = biteFixAITasks.DiagnosisTask(agent=diagnosisAgent)
         ideaGenerationTask = biteFixAITasks.IdeaGenerationTask(agent=ideaGeneratorAgent)
-        ideasEvaluationTask = biteFixAITasks.IdeasEvaluationTask(agent=ideasEvaluatorAgent)
-        codeDevelopmentTask = biteFixAITasks.CodeDevelopmentTask(agent=codeDeveloperAgent)
+        ideasEvaluationTask = biteFixAITasks.IdeasEvaluationTask(
+            agent=ideasEvaluatorAgent
+        )
+        codeDevelopmentTask = biteFixAITasks.CodeDevelopmentTask(
+            agent=codeDeveloperAgent
+        )
 
         biteFixAICrew = BiteFixAICrew(
             agent=[
                 diagnosisAgent,
                 ideaGeneratorAgent,
                 ideasEvaluatorAgent,
-                codeDeveloperAgent
+                codeDeveloperAgent,
             ],
             tasks=[
                 diagnosisTask,
                 ideaGenerationTask,
                 ideasEvaluationTask,
-                codeDevelopmentTask
-            ]
+                codeDevelopmentTask,
+            ],
         )
 
         result = biteFixAICrew.kickoff()

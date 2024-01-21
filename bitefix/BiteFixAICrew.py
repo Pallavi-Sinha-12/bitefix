@@ -1,5 +1,6 @@
 from crewai import Crew, Process, Agent, Task
 
+
 class BiteFixAICrew:
 
     """
@@ -13,17 +14,16 @@ class BiteFixAICrew:
         kickoff: Kicks off the crew. Returns the result of the crew in string format.
     """
 
-    def __init__(self, agent : list[Agent], tasks : list[Task]):
-
+    def __init__(self, agent: list[Agent], tasks: list[Task]):
         self.agent = agent
         self.tasks = tasks
 
     def kickoff(self) -> str:
         crew = Crew(
-            agents = self.agent,
+            agents=self.agent,
             tasks=self.tasks,
-            verbose= True,
-            process=Process.sequential
+            verbose=True,
+            process=Process.sequential,
         )
         result = crew.kickoff()
         return result

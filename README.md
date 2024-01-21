@@ -8,7 +8,7 @@
 
 BiteFix is an advanced and efficient tool designed to revolutionize the error-fixing process using the capabilities of Large Language Models (LLM). It is a Python library that offers a range of decorators to help you debug your code and fix errors in a matter of seconds.
 
-## Table of Contents
+## Table of Contents 📋
 
 - [Introduction](#introduction)
 - [Technologies Used](#technologies-used)
