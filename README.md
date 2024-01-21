@@ -112,7 +112,7 @@ Now, we can use the model with the decorator `@resolve` as follows.
 ```python
 
 from bitefix import resolve
-from langchain_community import Ollama
+from langchain_community.llms import Ollama
 
 llm = Ollama("openhermes")
 
