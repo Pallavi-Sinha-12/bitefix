@@ -21,7 +21,7 @@ BiteFix is an advanced and efficient tool designed to revolutionize the error-fi
 - [License](#license)
 - [References](#references)
 
-## Introduction
+## Introduction 🌟
 
 By offering decorators, BiteFix empowers you to enhance the error-handling experience in your functions. When a decorated function encounters an error, the decorator orchestrates a team of AI Agents, each specializing in a unique aspect of error resolution. Here's a brief overview of the AI Agents:
 
@@ -36,14 +36,14 @@ By offering decorators, BiteFix empowers you to enhance the error-handling exper
 BiteFix simplifies the error-fixing journey by seamlessly combining the expertise of these AI Agents, ensuring a smoother and more efficient debugging process for your Python code.
 
 
-## Technologies Used
+## Technologies Used 🔧
 
 - [![Python](https://img.shields.io/badge/Python-3.11-blue)](https://www.python.org/)
 - [![langchain](https://img.shields.io/badge/langchain-0.1.1-yellow)](https://api.python.langchain.com/en/latest/langchain_api_reference.html#)
 - [![crewai](https://img.shields.io/badge/crewai-0.1.2-green)](https://github.com/joaomdmoura/crewAI.git)
-- [![OpenAI](https://img.shields.io/badge/OpenAI-0.1.1-orange)](https://openai.com/)
+- [![gpt-4](https://img.shields.io/badge/gpt-4-orange)](https://openai.com/)
 
-## Getting Started
+## Getting Started 🚀
 
 - Install BiteFix using `pip install bitefix`
 - Explore the powerful decorators to streamline your error-fixing process!
@@ -51,7 +51,7 @@ BiteFix simplifies the error-fixing journey by seamlessly combining the expertis
 
 Happy Coding! 🚀
 
-## Examples
+## Examples 💻
 
 Let's take a look at some examples to understand how BiteFix works. Bitefix offers two decorators: `@resolve_error` and `@resolve_error_with_openai`.
 
@@ -90,8 +90,7 @@ print(result)
 
 ```
 
-Below is the recorded output of the function execution.
-
+Here is the recorded output of the function execution - [bitefix_decorator_example](https://drive.google.com/file/d/1JKeKCbhwSRkx4MfrVtz1oAtW_n4Up1rN/view?usp=sharing)
 
 
 We can see how this decorator provided us step by step debugging of the function in case of failure by using crew of Python AI coders. It also provided us with the solution to the error.
@@ -135,7 +134,7 @@ def length_of_lis(nums):
 
 Similarly, we can use any other Large Language Model with the decorator.
 
-## Project Structure
+## Project Structure 📁
 
 The project structure of Bitefix is as follows:
 
@@ -151,28 +150,39 @@ The project structure of Bitefix is as follows:
 - `LICENSE` - This file contains the license information for the project.
 - `README.md` - This file contains the documentation for the project.
 
-## Contributing
+## Contributing 🤝
 
 Contributions are always welcome!
 
 If you find any issue or have suggestions for improvements, please submit them as Github issues or pull requests.
 
+Here is the steps you can follow to contribute to this project:
 
-## Feedback
+1. Fork the project on Github.
+2. Clone the forked project to your local machine.
+3. Create a virtual environment using `python -m venv venv`.
+4. Activate the virtual environment using `venv\Scripts\activate` on Windows or `source venv/bin/activate` on Mac/Linux
+5. Install the dependencies using `pip install -r requirements.txt`.
+6. Make the required changes.
+7. Format the code using `black .`.
+8. Create a pull request.
+
+
+## Feedback 📣
 
 If you liked the project support it by giving a star :star:
 
 Feel free to send me feedback at pallavisinha95829@gmail.com. Let me know if you have any suggestions on how to make this project better.
 
 
-## 🔗 Contact
+## 🔗 Contact 📞
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pallavi-sinha-09540917b/)[![GitHub](https://img.shields.io/badge/GitHub-555555?style=for-the-badge&logo=github&logoColor=white&)](https://github.com/Pallavi-Sinha-12)
 
-## License
+## License 📝
 
 This project is licensed under the terms of the [MIT license](https://choosealicense.com/licenses/mit/)
 
-## References
+## References 📚
 
 - crewAI: Cutting-edge framework for orchestrating role-playing, autonomous AI agents. https://github.com/joaomdmoura/crewAI
 
