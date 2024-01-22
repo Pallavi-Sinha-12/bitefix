@@ -23,5 +23,5 @@ setup(
     ],
     install_requires=required,
     license="MIT",
-    homepage="https://github.com/Pallavi-Sinha-12/bitefix",
+    url="https://github.com/Pallavi-Sinha-12/bitefix",
 )

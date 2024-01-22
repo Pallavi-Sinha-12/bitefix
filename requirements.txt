@@ -1,6 +1,2 @@
 crewai==0.1.32
 langchain==0.1.1
-black==23.12.1
-twine==4.0.2
-setuptools==68.1.2
-wheel==0.42.0
