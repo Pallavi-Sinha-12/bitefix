@@ -14,7 +14,6 @@ BiteFix is an advanced and efficient tool designed to revolutionize the error-fi
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
 - [Examples](#examples)
-- [Project Structure](#project-structure)
 - [Contributing](#contributing)
 - [Feedback](#feedback)
 - [Contact](#contact)
@@ -134,22 +133,6 @@ def length_of_lis(nums):
 
 Similarly, we can use any other Large Language Model with the decorator.
 
-## Project Structure 📁
-
-The project structure of Bitefix is as follows:
-
-- `bitefix` : This folder contains the source code of the Bitefix library.
-- `bitefix/__init__.py` : This file is used to make the `bitefix` folder a Python module.
-- `bitefix/bitefix_utils.py` : This file contains the decorators exposed by the Bitefix library.
-- `bitefix/BiteFixAIRunner` : This file contains the class that orchestrates the AI Agents to resolve the error.
-- `bitefix/BiteFixAICrew` : This file contains the class that represents the crew of Bitefix AI Agents.
-- `bitefix/BiteFixAIAgents` : This file contains the classes that represent the individual Bitefix AI Agents.
-- `bitefix/BiteFixAITasks` : This file contains the classes that represent the individual tasks performed by the Bitefix AI Agents.
-- `requirements.txt` - This file specifies the Python dependencies required to run the project.
-- `setup.py` - This file is used to package the project for distribution.
-- `LICENSE` - This file contains the license information for the project.
-- `README.md` - This file contains the documentation for the project.
-
 ## Contributing 🤝
 
 Contributions are always welcome!
@@ -170,10 +153,10 @@ Here is the steps you can follow to contribute to this project:
 
 ## Feedback 📣
 
-If you liked the project support it by giving a star :star:
+'bitefix' library is just a small step towards making the error-fixing process more efficient using the capabilities of Large Language Models. We have to go a long way to make this better.
+Feel free to send me feedback at dataaienthusiast128@gmail.com. Let me know if you have any suggestions on how to make this project better.
 
-Feel free to send me feedback at pallavisinha95829@gmail.com. Let me know if you have any suggestions on how to make this project better.
-
+If you liked the project support it by giving a star :star: to this repo.
 
 ## 🔗 Contact 📞
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pallavi-sinha-09540917b/)[![GitHub](https://img.shields.io/badge/GitHub-555555?style=for-the-badge&logo=github&logoColor=white&)](https://github.com/Pallavi-Sinha-12)
