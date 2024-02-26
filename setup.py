@@ -8,8 +8,8 @@ with open("requirements.txt") as f:
 
 setup(
     name="bitefix",
-    version="0.0.3",
-    description="""Bitefix is an efficient library designed to streamline error fixing with AI-powered decorators for seamless debugging. 
+    version="0.0.4",
+    description="""Bitefix is an efficient library designed to streamline Python Runtime error debugging with AI-powered decorators. 
     It initializes a crew of AI agents which work together to diagnose the error, generate ideas to fix the error, 
     evaluate the ideas to choose the best and develop the code to fix the error.""",
     long_description=long_description,
