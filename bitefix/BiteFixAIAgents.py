@@ -1,6 +1,7 @@
 from crewai import Agent
 from typing import Any, Tuple
 
+
 class BiteFixAIAgents:
 
     """
@@ -85,19 +86,16 @@ class BiteFixAIAgents:
             Your ideas will be evaluated by the Lead Python code expert to choose the best one to fix the error.
 
             Steps:
-            1. Begin by thoroughly reviewing the diagnosis of the error provided by the Python Code Diagnosis Expert.
-            2. Understand the context, examining the function code, arguments passed, and the associated error message.
-            3. Utilize your extensive experience to identify patterns or similarities with errors encountered in the past.
-            4. Prioritize solutions that align with best practices in Python coding.
-            5. Consider the efficiency of each proposed idea, aiming for solutions that optimize performance.
-            6. Generate a diverse set of ideas to fix the error, exploring various approaches and techniques.
-            7. Ensure that the suggested ideas cater to different potential causes of the error.
+            1. Carefully review the Python Code Diagnosis Expert's error diagnosis to understand the context, examining the function code, arguments passed, and the associated error message.
+            2. Prioritize solutions aligned with best practices in Python coding, ensuring they do not disrupt any existing functionality.
+            3. Generate a concise set of three ideas to fix the error, considering efficiency and diverse approaches. 
 
             Rules:
             1. Express each idea in clear and simple language, making it accessible to a broad audience.
             2. Provide explanations that not only address the technical aspects but also enhance understanding.
-            3. Your ideas should be based on the diagnosis provided and should align with best practices and efficiency.
-            4. Remember, your role is to generate ideas to fix the error, not to write or fix the code. Stay in the role of a Senior Python code expert.
+            3. Verify that each idea maintains compatibility with the current codebase, avoiding potential disruptions.
+            4. Your ideas should be based on the diagnosis provided and should align with best practices and efficiency.
+            5. Remember, your role is to generate ideas to fix the error, not to write the code. Stay in the role of a Senior Python code expert.
             
             Output Format: Your output should be in markdown format.
 
@@ -126,7 +124,7 @@ class BiteFixAIAgents:
             Your chosen idea will be used by the Python code developer to write the code to fix the error.
 
             Steps:
-            1. Carefully analyze the ideas proposed by the Senior Python Code Expert.
+            1. Carefully analyze all the three ideas proposed by the Senior Python Code Expert.
             2. Examine each idea in relation to the diagnosed error and the specifics of the function.
             3. Evaluate each idea against established best practices and coding standards.
             4. Select the idea that is most effective in addressing the diagnosed error.
@@ -165,16 +163,15 @@ class BiteFixAIAgents:
             Steps:
             1. Review the idea chosen by the Lead Python code expert.
             2. Understand the context, examining the function code, arguments passed, and the associated error message.
-            3. Implement the code to fix the error based on the chosen idea.
-            4. Provide a detailed explanation of the implementation in simple language.
+            3. Rewrite the function code to fix the error based on the chosen idea.
 
             Rules:
             1. Your code should effectively address the diagnosed error and align with the chosen idea.
-            2. Ensure that the code adheres to best practices and coding standards.
-            3. Your explanation should enhance understanding and provide insights into the implementation.
+            2. Double check the rewritten code to ensure it accurately implements the chosen idea and resolves the error.
+            3. Ensure that the code adheres to best practices and coding standards.
             4. Remember, you should stick to the chosen idea and not deviate from it. You just have to write the code based on the chosen idea.
 
-            Output Format: Your code will be in Python format and your explanation should be in markdown format.
+            Output Format: Your output should be in Python format.
             
             """,
             allow_delegation=False,
