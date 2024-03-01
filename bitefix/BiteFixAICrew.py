@@ -22,8 +22,9 @@ class BiteFixAICrew:
         crew = Crew(
             agents=self.agent,
             tasks=self.tasks,
-            verbose=True,
+            verbose=False,
             process=Process.sequential,
+            full_output=True,
         )
         result = crew.kickoff()
         return result
