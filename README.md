@@ -10,17 +10,17 @@ BiteFix is an advanced and efficient tool designed to revolutionize the error-fi
 
 ## Table of Contents 📋
 
-- [Introduction](#Introduction🌟)
-- [Technologies Used](#Technologies-Used🔧)
-- [Getting Started](#Getting-Started🚀)
-- [Examples](#Examples💻)
-- [Contributing](#Contributing🤝)
-- [Feedback](#Feedback📣)
-- [Contact](#🔗Contact📞)
-- [License](#License📝)
-- [References](#References📚)
+- [Introduction](#Introduction)
+- [Technologies Used](#Technologies-Used)
+- [Getting Started](#Getting-Started)
+- [Examples](#Examples)
+- [Contributing](#Contributing)
+- [Feedback](#Feedback)
+- [Contact](#Contact)
+- [License](#License)
+- [References](#References)
 
-## Introduction🌟
+## Introduction
 
 By offering decorators, BiteFix empowers you to enhance the error-handling experience in your functions. When a decorated function encounters an error, the decorator orchestrates a team of AI Agents, each specializing in a unique aspect of error resolution. Here's a brief overview of the AI Agents:
 
@@ -35,14 +35,14 @@ By offering decorators, BiteFix empowers you to enhance the error-handling exper
 BiteFix simplifies the error-fixing journey by seamlessly combining the expertise of these AI Agents, ensuring a smoother and more efficient debugging process for your Python code.
 
 
-## Technologies-Used🔧
+## Technologies-Used
 
 - [![Python](https://img.shields.io/badge/Python-3.11-blue)](https://www.python.org/)
 - [![langchain](https://img.shields.io/badge/langchain-0.1.1-yellow)](https://api.python.langchain.com/en/latest/langchain_api_reference.html#)
 - [![crewai](https://img.shields.io/badge/crewai-0.1.2-green)](https://github.com/joaomdmoura/crewAI.git)
 - [![gpt-4](https://img.shields.io/badge/gpt-4-orange)](https://openai.com/)
 
-## Getting-Started🚀
+## Getting-Started
 
 - Install BiteFix using `pip install bitefix`
 - Explore the powerful decorators to streamline your error-fixing process!
@@ -50,7 +50,7 @@ BiteFix simplifies the error-fixing journey by seamlessly combining the expertis
 
 Happy Coding! 🚀
 
-## Examples💻
+## Examples
 
 Let's take a look at some examples to understand how BiteFix works. Bitefix offers two decorators: `@resolve` and `@resolve_with_openai`.
 
@@ -62,7 +62,7 @@ Let's say you have a function that is supposed to return longest length of subse
 
 from bitefix import resolve_with_openai
 
-@resolve_with_openai(openai_api_key="YOUR_OPENAI_KEY")
+@resolve_with_openai(openai_api_key="YOUR_OPENAI_KEY", model_name="gpt-4", temperature=0.7, export_dir = "export", verbose=True)
 def length_of_lis(nums):
     if not nums:
         return 0
@@ -78,8 +78,13 @@ def length_of_lis(nums):
 
 ```
 
-In the above example, we have just added Open AI API key as a parameter to the decorator. You can also add the name of the particular Open AI LLM you want to use and the temperature. By default, it uses OpenAI's gpt-4 model with temperature 0.7.
-Now after writing the function, let's try to execute it with a list of numbers.
+`openai_api_key` : The OpenAI API key to use the OpenAI's model. You can get the API key from [here](https://beta.openai.com/account/api-keys).
+`model_name` : The name of the model to be used. By default, it uses OpenAI's gpt-4 model.
+`temperature` : The temperature parameter for the model. By default, it is set to 0.7.
+`export_dir` : The directory path to export Error Resoltion Report by BiteFix AI Agents and fixed code python file. It will export the report if a directory is provided. By default, it is set to None.
+`verbose` : If set to True, it will print the debugging steps. By default, it is set to True.
+
+Now, let's call the function and see how it works.
 
 ```python
 
@@ -115,7 +120,7 @@ from langchain_community.llms import Ollama
 
 llm = Ollama("openhermes")
 
-@resolve(llm)
+@resolve(llm = llm, export_dir = None, verbose=True)
 def length_of_lis(nums):
     if not nums:
         return 0
@@ -131,9 +136,11 @@ def length_of_lis(nums):
 
 ```
 
+Note : Here `export_dir` and `verbose` are optional parameters.
+
 Similarly, we can use any other Large Language Model with the decorator.
 
-## Contributing🤝
+## Contributing
 
 Contributions are always welcome!
 
@@ -151,21 +158,21 @@ Here is the steps you can follow to contribute to this project:
 8. Create a pull request.
 
 
-## Feedback📣
+## Feedback
 
 'bitefix' library is just a small step towards making the error-fixing process more efficient using the capabilities of Large Language Models. We have to go a long way to make this better.
 Feel free to send me feedback at dataaienthusiast128@gmail.com. Let me know if you have any suggestions on how to make this project better.
 
 If you liked the project support it by giving a star :star: to this repo.
 
-## 🔗Contact📞
+## Contact
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pallavi-sinha-09540917b/)[![GitHub](https://img.shields.io/badge/GitHub-555555?style=for-the-badge&logo=github&logoColor=white&)](https://github.com/Pallavi-Sinha-12)
 
-## License📝
+## License
 
 This project is licensed under the terms of the [MIT license](https://choosealicense.com/licenses/mit/)
 
-## References📚
+## References
 
 - crewAI: Cutting-edge framework for orchestrating role-playing, autonomous AI agents. https://github.com/joaomdmoura/crewAI
 
