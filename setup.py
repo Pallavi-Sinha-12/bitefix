@@ -8,7 +8,7 @@ with open("requirements.txt") as f:
 
 setup(
     name="bitefix",
-    version="0.1.0",
+    version="0.2.0",
     description="""Bitefix is an efficient library designed to streamline Python Runtime error debugging with AI-powered decorators. 
     It initializes a crew of AI agents which work together to diagnose the error, generate ideas to fix the error, 
     evaluate the ideas to choose the best and develop the code to fix the error.""",
