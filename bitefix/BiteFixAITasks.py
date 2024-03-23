@@ -21,7 +21,11 @@ class BiteFixAITasks:
     """
 
     def __init__(
-        self, function_code: str, function_description: str, arguments: Tuple[Any, ...], error_message: str
+        self,
+        function_code: str,
+        function_description: str,
+        arguments: Tuple[Any, ...],
+        error_message: str,
     ):
         self.function_code = function_code
         self.function_description = function_description
@@ -34,7 +38,6 @@ class BiteFixAITasks:
         )
 
     def DiagnosisTask(self, agent: Agent) -> Task:
-
         return Task(
             description=f"""Go through the function code, arguments passed and the error message and explain why the error occured. 
             Explain why the function failed for the arguments passed. Explain it in normal human language. 

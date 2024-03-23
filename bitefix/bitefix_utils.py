@@ -56,16 +56,21 @@ def resolve_with_openai(
                 llm = ChatOpenAI(temperature=temperature, model_name=model_name)
 
                 if function_description:
-                    if len(function_description.split()) < 20 or len(
-                        function_description.split()
-                    ) > 50:
+                    if (
+                        len(function_description.split()) < 20
+                        or len(function_description.split()) > 50
+                    ):
                         raise ValueError(
                             "The function description should be within the word limit of 20-50 words."
                         )
                 print("Running BiteFix AI ...\n")
                 try:
                     biteFixAIRunner = BiteFixAIRunner(
-                        function_code=code, function_description= function_description, arguments=args, error_message=e, llm=llm
+                        function_code=code,
+                        function_description=function_description,
+                        arguments=args,
+                        error_message=e,
+                        llm=llm,
                     )
                     result = biteFixAIRunner.run()
                 except Exception as ex:
@@ -93,16 +98,26 @@ def resolve_with_openai(
 
                 try:
                     if export_dir:
-                        export_error_resolution_report(result["tasks_outputs"], export_dir)
+                        export_error_resolution_report(
+                            result["tasks_outputs"], export_dir
+                        )
                 except Exception as exc:
-                    print("Error occurred while exporting the error resolution report - ", exc)
+                    print(
+                        "Error occurred while exporting the error resolution report - ",
+                        exc,
+                    )
 
         return function_causing_error
 
     return resolve_with_openai_decorator
 
 
-def resolve(llm: object, function_description: str = None, export_dir: str = None, verbose: bool = True) -> Callable:
+def resolve(
+    llm: object,
+    function_description: str = None,
+    export_dir: str = None,
+    verbose: bool = True,
+) -> Callable:
     """
     Bite Fix AI Decorator that provides error resolution on Runtime Errors using BiteFiix AI Agents and the provided Large Language Model.
 
@@ -139,9 +154,10 @@ def resolve(llm: object, function_description: str = None, export_dir: str = Non
                 print("Error occurred while executing the function. - ", e)
                 code = inspect.getsource(func)
                 if function_description:
-                    if len(function_description.split()) < 20 or len(
-                        function_description.split()
-                    ) > 50:
+                    if (
+                        len(function_description.split()) < 20
+                        or len(function_description.split()) > 50
+                    ):
                         raise ValueError(
                             "The function description should be within the word limit of 30-50 words."
                         )
@@ -150,7 +166,11 @@ def resolve(llm: object, function_description: str = None, export_dir: str = Non
 
                 try:
                     biteFixAIRunner = BiteFixAIRunner(
-                        function_code=code, function_description=function_description, arguments=args, error_message=e, llm=llm
+                        function_code=code,
+                        function_description=function_description,
+                        arguments=args,
+                        error_message=e,
+                        llm=llm,
                     )
                     result = biteFixAIRunner.run()
                 except Exception as ex:
@@ -179,9 +199,14 @@ def resolve(llm: object, function_description: str = None, export_dir: str = Non
 
                 if export_dir:
                     try:
-                        export_error_resolution_report(result["tasks_outputs"], export_dir)
+                        export_error_resolution_report(
+                            result["tasks_outputs"], export_dir
+                        )
                     except Exception as exc:
-                        print("Error occurred while exporting the error resolution report - ", exc)
+                        print(
+                            "Error occurred while exporting the error resolution report - ",
+                            exc,
+                        )
 
         return function_causing_error
 
