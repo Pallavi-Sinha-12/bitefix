@@ -22,25 +22,25 @@ class BiteFixAIRunner:
     def __init__(
         self,
         function_code: str,
+        function_description: str,
         arguments: Tuple[Any, ...],
         error_message: str,
         llm: object,
     ):
         self.function_code = function_code
+        self.function_description = function_description
         self.arguments = arguments
         self.error_message = error_message
         self.llm = llm
 
     def run(self) -> str:
         biteFixAIAgents = BiteFixAIAgents(
-            function_code=self.function_code,
-            arguments=self.arguments,
-            error_message=self.error_message,
             llm=self.llm,
         )
 
         biteFixAITasks = BiteFixAITasks(
             function_code=self.function_code,
+            function_description=self.function_description,
             arguments=self.arguments,
             error_message=self.error_message,
         )

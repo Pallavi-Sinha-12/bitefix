@@ -21,17 +21,28 @@ class BiteFixAITasks:
     """
 
     def __init__(
-        self, function_code: str, arguments: Tuple[Any, ...], error_message: str
+        self,
+        function_code: str,
+        function_description: str,
+        arguments: Tuple[Any, ...],
+        error_message: str,
     ):
         self.function_code = function_code
+        self.function_description = function_description
         self.arguments = arguments
         self.error_message = error_message
+        self.function_description_block = (
+            f"The function description is given to you here - {self.function_description}. "
+            if self.function_description
+            else ""
+        )
 
     def DiagnosisTask(self, agent: Agent) -> Task:
         return Task(
             description=f"""Go through the function code, arguments passed and the error message and explain why the error occured. 
             Explain why the function failed for the arguments passed. Explain it in normal human language. 
             The function code is given to you here - {self.function_code}. 
+            {self.function_description_block}
             The arguments passed are given to you here - {self.arguments}. 
             The error message is given to you here - {self.error_message}.""",
             agent=agent,
@@ -41,8 +52,9 @@ class BiteFixAITasks:
         return Task(
             description=f"""Generate ideas on how to fix the error in normal human language. 
             You also think of best practices and efficiency while suggesting the ideas. 
-            Consider the given function code, arguments passed and the error message while generating the ideas. 
+            Consider the below given information while generating ideas:
             The function code is given to you here - {self.function_code}. 
+            {self.function_description_block}
             The arguments passed are given to you here - {self.arguments}. 
             The error message is given to you here - {self.error_message}. """,
             agent=agent,
@@ -53,8 +65,9 @@ class BiteFixAITasks:
             description=f"""Evaluate the error fix ideas and choose the best idea to fix the error.
             Also explain your decision to fix the error in normal human language. 
             Also think of best practices and efficiency while evaluating the ideas. 
-            Take a look on function code, arguments passed and error message as well if needed. 
+            Take a look on below given information while evaluating the ideas as well if needed:
             The function code is given to you here - {self.function_code}. 
+            {self.function_description_block}
             The arguments passed are given to you here - {self.arguments}. 
             The error message is given to you here - {self.error_message}.""",
             agent=agent,
@@ -65,6 +78,7 @@ class BiteFixAITasks:
             description=f"""Rewrite the function code to fix the error based on the idea chosen. 
             Also explain the implementation details in normal human language. 
             The function code is given to you here - {self.function_code}. 
+            {self.function_description_block}
             The arguments passed are given to you here - {self.arguments}. 
             The error message is given to you here - {self.error_message}. """,
             agent=agent,
