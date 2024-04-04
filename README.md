@@ -129,7 +129,7 @@ from langchain_community.llms import Ollama
 
 llm = Ollama("openhermes")
 
-@resolve_with_openai(llm = llm, function_description= function_description, export_dir="logs", verbose=True)
+@resolve(llm = llm, function_description= function_description, export_dir="logs", verbose=True)
 def max_profit(stock_prices):
 
     min_price = stock_prices[0]
