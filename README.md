@@ -16,6 +16,7 @@ BiteFix is an advanced and efficient Python library designed to revolutionize th
 - [Examples](#Examples)
 - [Contributing](#Contributing)
 - [Feedback](#Feedback)
+- [Conclusion](#Conclusion)
 - [Contact](#Contact)
 - [License](#License)
 - [References](#References)
@@ -178,8 +179,8 @@ If you liked the project support it by giving a star :star: to this repo.
 
 ## Conclusion
 
-BiteFix is a powerful Python library that leverages the capabilities of Large Language Models to streamline the error-fixing process in Python. By offering decorators that orchestrate a team of AI Agents, BiteFix helps you resolve the runtime errors in your code efficiently. 
-ONE IMPORTANT OBSERVATION IS THAT CURRENTLY BITEFIX SHOWS GOOD RESULTS WITH INDEPENDENT FUNCTIONS. FOR FUNCTIONS WHICH CAN HAVE NESTED FUNCTIONS OR CLASSES, THE RESULTS MAY VARY. IN THOSE CASES, WE CAN CHOOSE TO GIVE THE FUNCTION DESCRIPTION TO THE DECORATOR TO GET BETTER RESULTS.
+- BiteFix is a powerful Python library that leverages the capabilities of Large Language Models to streamline the error-fixing process in Python. By offering decorators that orchestrate a team of AI Agents, BiteFix helps you resolve the runtime errors in your code efficiently. 
+- ONE IMPORTANT OBSERVATION IS THAT CURRENTLY BITEFIX SHOWS GOOD RESULTS WITH INDEPENDENT FUNCTIONS. FOR FUNCTIONS WHICH CAN HAVE NESTED FUNCTIONS OR CLASSES, THE RESULTS MAY VARY. IN THOSE CASES, WE CAN CHOOSE TO GIVE THE FUNCTION DESCRIPTION TO THE DECORATOR TO GET BETTER RESULTS.
 
 ## Contact
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pallavi-sinha-09540917b/)[![GitHub](https://img.shields.io/badge/GitHub-555555?style=for-the-badge&logo=github&logoColor=white&)](https://github.com/Pallavi-Sinha-12)
