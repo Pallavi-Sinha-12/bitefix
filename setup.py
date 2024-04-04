@@ -24,5 +24,5 @@ setup(
     install_requires=required,
     license="MIT",
     url="https://github.com/Pallavi-Sinha-12/bitefix",
-    python_requires=">=3.10",
+    python_requires=">=3.10.0",
 )
