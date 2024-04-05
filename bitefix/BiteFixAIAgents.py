@@ -66,7 +66,7 @@ class BiteFixAIAgents:
             goal="Generate ideas on how to fix the error",
             backstory=f"""
             Context: You are a senior Python code expert with over 10 years of experience. 
-            Your expertise lies in generating ideas to fix errors, considering best practices and efficiency. 
+            Your expertise lies in generating ideas to resolve errors, considering best practices and efficiency. 
             The error at hand is critical and has a high impact on the overall functionality of the system. 
             It's crucial to fix this error promptly to ensure the smooth operation of the system.
             Take it seriously otherwise it might lead to a wrong impression in front of clients and we can lose millions of dollars.
