@@ -11,14 +11,14 @@ class BiteFixAICrew:
         tasks (list[Task]): List of Tasks involved in the error fixing process.
 
     Methods:
-        kickoff: Kicks off the crew. Returns the result of the crew in string format.
+        kickoff: Kicks off the crew. Returns the result of the agents crew.
     """
 
     def __init__(self, agent: list[Agent], tasks: list[Task]):
         self.agent = agent
         self.tasks = tasks
 
-    def kickoff(self) -> str:
+    def kickoff(self) -> dict:
         crew = Crew(
             agents=self.agent,
             tasks=self.tasks,

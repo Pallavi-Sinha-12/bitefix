@@ -33,7 +33,7 @@ class BiteFixAIRunner:
         self.error_message = error_message
         self.llm = llm
 
-    def run(self) -> str:
+    def run(self) -> dict:
         biteFixAIAgents = BiteFixAIAgents(
             llm=self.llm,
         )
