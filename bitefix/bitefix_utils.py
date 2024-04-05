@@ -7,7 +7,6 @@ from crewai.tasks.task_output import TaskOutput
 from typing import List
 from datetime import datetime
 
-
 def resolve_with_openai(
     openai_api_key: str,
     function_description: str = None,

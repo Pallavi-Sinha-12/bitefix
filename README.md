@@ -125,9 +125,14 @@ Now, we can use the model with the decorator `@resolve` as follows.
 ```python
 
 from bitefix import resolve
-from langchain_community.llms import Ollama
+from langchain_community.llms.ollama import Ollama
 
-llm = Ollama("openhermes")
+llm = Ollama(model = "openhermes")
+
+function_description = """
+This function calculates the maximum profit that can be obtained from a given array of stock prices, aiding in financial analysis.
+Stock prices represent daily closing prices of a stock over time, obtained from financial data sources.
+"""
 
 @resolve(llm = llm, function_description= function_description, export_dir="logs", verbose=True)
 def max_profit(stock_prices):
