@@ -119,7 +119,7 @@ def resolve(
     verbose: bool = True,
 ) -> Callable:
     """
-    Bite Fix AI Decorator that provides error resolution on Runtime Errors using BiteFiix AI Agents and the provided Large Language Model.
+    Bite Fix AI Decorator that provides error resolution on Runtime Errors using BiteFiix AI Agents and the provided LLM.
 
     Args:
         llm (object): The language model object to use for error resolution.
