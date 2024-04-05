@@ -11,7 +11,7 @@ setup(
     version="1.0.1",
     description="""Bitefix is an efficient library designed to streamline Python Runtime error debugging with AI-powered decorators. 
     It initializes a crew of AI agents which work together to diagnose the error, generate ideas to fix the error, 
-    evaluate the ideas to choose the best and develop the code to fix the error.""",
+    evaluate the ideas to choose the best and develop the code to fix the error that occurred.""",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="Pallavi Sinha",
